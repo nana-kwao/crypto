@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>CRYPTO FUTURES TRADING PNL CALCULATOR</title>
+        <link rel="stylesheet" href="assets/style.css">
+        <script src="assets/script.js" defer></script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="header">
+                <h2 class="title">FUTURES PNL CALCULATOR</h2>
+            </div>
+            <div class="forms">
+                <form id="form">
+                    <label for="principal">Principal</label>
+                    <input type="number" name="principal" id="principal" required>
+                    
+                    <label for="amount">Amount to Invest</label>
+                    <input type="number" name="amount" id="amount">
+
+                    <label for="trades">Number of Trades</label>
+                    <input type="number" name="trades" id="trades" required>
+
+                    <label for="leverage">Leverage</label>
+                    <input type="number" name="leverage" id="leverage" placeholder="x"  required>
+
+                    <label for="take-profit">Take Profit</label>
+                    <input type="number" name="take-profit" id="take-profit" placeholder="%"  required>
+
+                    <div class="btn">
+                        <button type="submit" id="submit">Submit</button>
+                        <button type="reset">Reset</button>
+                    </div>
+                </form>
+                <div class="results" id="results">
+                    <input type="text" name="r-principal" id="r-principal" disabled>
+                    <input type="text" name="r-amount" id="r-amount" disabled>
+                    <input type="text" name="r-trades" id="r-trades" disabled>
+                    <input type="text" name="r-leverage" id="r-leverage" disabled>
+                    <input type="text" name="r-take-profit" id="r-take-profit" disabled>
+                    <input type="text" name="profit" id="profit" disabled>
+                    <button type="button" id="back">Back</button>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
