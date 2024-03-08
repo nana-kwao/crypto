@@ -8,18 +8,28 @@ function Calculation(){
 
     // Getting input field IDs and their values
     const principal = parseFloat(document.getElementById("principal").value);
-
-    let amount = parseFloat(document.getElementById("amount").value);
-
+    let total = principal;
+    let amount = (parseFloat(document.getElementById("amount").value))/100;
     let trades = parseFloat(document.getElementById("trades").value);
 
     let leverage = parseFloat(document.getElementById("leverage").value);
 
     let takeProfit = parseFloat(document.getElementById("take-profit").value);
 
-    let new_principal = 0;
+    let totalRemain = 1 - amount; 
+    let remain;
+    let funding;
+
+    let fees = 0;
+    let new_principal;
+
     for(let x = 0; x < trades; x++){
-        total = amount * ((leverage * takeProfit) / 100);
+        funding = (0.03/100) * total;
+        total = total - funding;
+        fees = fees + funding;
+        let totalTrade = total * amount;
+        remain = total * totalRemain;
+        new_principal = amount * ((leverage * takeProfit) * totalTrade);
         new_principal = total + new_principal;
     }
     let total_Profit = new_principal + principal;
