@@ -30,7 +30,7 @@ function Calculation(){
         let totalTrade = total * amount;
         remain = total * totalRemain;
         new_principal = amount * ((leverage * takeProfit) * totalTrade);
-        new_principal = total + new_principal;
+        new_principal = total + new_principal + remain;
     }
     let total_Profit = new_principal + principal;
 
@@ -38,9 +38,6 @@ function Calculation(){
     // Getting result field IDs and setting their placeholders
     let r_principal = document.getElementById("r-principal");
     r_principal.setAttribute("placeholder", "Principal: " + principal);
-
-    let r_amount = document.getElementById("r-amount");
-    r_amount.setAttribute("placeholder", "Amount: " + amount);
 
     let r_trades = document.getElementById("r-trades");
     r_trades.setAttribute("placeholder", "Trades: " + trades);
