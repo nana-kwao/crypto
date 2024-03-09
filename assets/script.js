@@ -4,36 +4,26 @@ const submitBtn = document.getElementById("submit");
 const backBtn = document.getElementById("back");
 
 // function for calculation
-function Calculation(){
-
+function Calculation() {
     // Getting input field IDs and their values
     const principal = parseFloat(document.getElementById("principal").value);
     let total = principal;
-    let amount = (parseFloat(document.getElementById("amount").value))/100;
+    let amount = parseFloat(document.getElementById("funding").value);
     let trades = parseFloat(document.getElementById("trades").value);
-
     let leverage = parseFloat(document.getElementById("leverage").value);
-
     let takeProfit = parseFloat(document.getElementById("take-profit").value);
-
-    let totalRemain = 1 - amount; 
-    let remain;
     let funding;
-
     let fees = 0;
-    let new_principal;
+    let profit; 
 
-    for(let x = 0; x < trades; x++){
-        funding = (0.03/100) * total;
-        total = total - funding;
+    for (let x = 0; x < trades; x++){
+        funding = (amount / 100) * total;
         fees = fees + funding;
-        let totalTrade = total * amount;
-        remain = total * totalRemain;
-        new_principal = amount * ((leverage * takeProfit) * totalTrade);
-        new_principal = total + new_principal + remain;
+        let alltotal = total - funding;
+        profit = ((leverage * takeProfit) / 100) * alltotal;
+        total = alltotal + profit;
     }
-    let total_Profit = new_principal + principal;
-
+    let total_Profit = total.toFixed(2);
 
     // Getting result field IDs and setting their placeholders
     let r_principal = document.getElementById("r-principal");
