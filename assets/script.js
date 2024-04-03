@@ -5,6 +5,7 @@ const backBtn = document.getElementById("back");
 
 // function for calculation
 function Calculation() {
+function Calculation() {
     // Getting input field IDs and their values
     const principal = parseFloat(document.getElementById("principal").value);
     let total = principal;
@@ -79,3 +80,4 @@ backBtn.addEventListener('click', (e) => {
     results.style.display = "none";
     forms.style.display = "flex";
 })
+
