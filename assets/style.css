@@ -96,10 +96,12 @@ body{
     align-items: center;
 }
 .results input{
-    width: 230px;
+    width: 270px;
     height: 35px;
     text-align: center;
-    color: black;
     font-weight: 800;
     font-size: 18px;
+}
+.results input[placeholder]{ 
+    color: rgb(66, 4, 66);
 }
