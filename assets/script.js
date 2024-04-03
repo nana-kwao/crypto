@@ -28,13 +28,12 @@ function Calculation() {
         profit = ((leverage * takeProfit) / 100) * alltotal;
         total = alltotal + profit + totalRemain;
 
-        console.log("Total: " + total);
-        console.log("Funding Fees: " + funding);
         console.log("To Trade: " + toTrade)
-        console.log("Fees: " + fees);
+        console.log("Funding Fees: " + funding);
         console.log("All Total: " + alltotal);
         console.log("Profit: " + profit);
         console.log("Remain: " + totalRemain);
+        console.log("Total: " + total);
         console.log("");
     }
     let total_Profit = total.toFixed(2);
